@@ -1,7 +1,9 @@
 📺 Netflix Clone - Imersão Alura
-Um projeto interativo que replica a interface de seleção de perfis e o catálogo da Netflix, desenvolvido durante a Imersão Alura AI. O projeto foca em manipulação de DOM, persistência de dados local e design responsivo.
+
+Um projeto interativo que replica a interface de seleção de perfis e o catálogo da Netflix, desenvolvido durante a Imersão Alura IA. O projeto foca em manipulação de DOM, persistência de dados local e design responsivo.
 
 🚀 Funcionalidades
+
 Seleção de Perfis Dinâmica: Escolha entre diferentes perfis na tela inicial.
 
 Persistência com LocalStorage: O nome e a foto do perfil selecionado são salvos e exibidos automaticamente na barra de navegação do catálogo.
@@ -13,6 +15,7 @@ Design Responsivo: Grid de perfis adaptável para dispositivos móveis (forçado
 Catálogo Interativo: Carrosséis de filmes com efeito de expansão (hover) e integração com trailers do YouTube.
 
 🛠️ Tecnologias Utilizadas
+
 HTML5: Estrutura semântica.
 
 CSS3: Flexbox, Grid, Variáveis CSS e Media Queries.
@@ -21,29 +24,9 @@ JavaScript (ES6+): Manipulação de eventos, LocalStorage e módulos.
 
 Font Awesome: Ícones da interface.
 
-📁 Estrutura do Projeto
-Plaintext
-
-├── assets/              # Imagens e avatares dos perfis
-├── catalogo/            # Página do catálogo de filmes
-│   ├── js/
-│   │   ├── main.js      # Lógica de renderização e perfil ativo
-│   │   └── data.js      # Banco de dados dos filmes
-│   └── catalogo.html    # Estrutura do catálogo
-├── js/
-│   └── index.js         # Lógica de seleção e Dark Mode
-├── style.css            # Estilos globais e tela de perfis
-└── index.html           # Tela de entrada ("Quem está assistindo?")
-🔧 Como Rodar o Projeto
-Clone este repositório ou baixe os arquivos.
-
-Certifique-se de manter a estrutura de pastas conforme listado acima.
-
-Abra o arquivo index.html em seu navegador.
-
-Para uma melhor experiência com módulos JS, recomenda-se usar a extensão Live Server no VS Code.
 
 💡 Aprendizados Técnicos
+
 Caminhos Relativos: Ajuste de chamadas de scripts e imagens em subpastas (../).
 
 LocalStorage: Uso de setItem e getItem para transferir dados entre páginas sem um banco de dados backend.
