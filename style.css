@@ -1,0 +1,187 @@
+:root {
+    --bg-color: #141414;
+    --text-color: #808080; /* Cinza para o estado inativo */
+    --text-hover: #ffffff; /* Branco para o estado ativo */
+    --title-color:#ffffff;
+    --transition-speed: 0.18s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body.light-mode {
+    --bg-color: #f0f0f0;
+    --text-color: #4d4d4d;
+    --text-hover: #000000;
+    --title-color: #141414;
+}
+
+main {
+    text-align: center;
+    width: 100%;
+}
+
+header h1 {
+    font-size: 3.5vw;
+    font-weight: 900;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    color: var(--title-color);
+    transition: color var(var(--transition-speed))
+}
+
+/* Lista de Perfis */
+.profiles_list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2vw;
+    padding: 0;
+}
+
+.profile {
+    width: 10vw;
+    min-width: 120px;
+    max-width: 200px;
+}
+
+.profile a {
+    text-decoration: none;
+    display: block;
+}
+
+/* Estilização do Avatar */
+.profile img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    border: 3px solid transparent;
+    object-fit: cover;
+    
+    /* Sua transição específica */
+    transition: box-shadow var(--transition-speed) ease,
+                border-color var(--transition-speed) ease;
+}
+
+/* Efeito de Hover no Perfil */
+.profile a:hover img {
+    border-color: #ff0000;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+/* Texto do Perfil (Figcaption) */
+.profile figcaption {
+    margin-top: 0.8em;
+    font-size: 1.2vw;
+    color: var(--text-color);
+    font-weight: 400;
+    text-align: center;
+    transition: color var(--transition-speed) ease;
+}
+
+.profile a:hover figcaption {
+    color: var(--text-hover);
+}
+
+/* Botão Gerenciar Perfis */
+.manage-profiles {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.perfil-manage-btn {
+    display: inline-block;
+    padding: 0.5em 1.5em;
+    background: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+    transition: all var(--transition-speed) ease;
+}
+
+.perfil-manage-btn:hover {
+    color: var(--text-hover);
+    border-color: var(--text-hover);
+}
+
+/* Estilo do Botão de Troca */
+.btn-theme {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    color: var(--text-color);
+    padding: 0px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all var(--transition-speed);
+}
+
+.btn-theme:hover {
+    border-color: var(--text-hover);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    /* Centraliza e limita a largura da lista */
+    .profiles_list {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 20px; /* Espaço fixo entre os itens */
+        max-width: 320px; /* Força os itens a ficarem compactos */
+        margin: 0 auto;
+        padding: 0;
+    }
+
+   .profile {
+        /* duas colunas exatas, subtrai metade do gap (20px) */
+        flex: 0 0 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+        min-width: 0; /* sem !important */
+        width: auto;
+    }
+
+    /* Garante que a imagem não flutue e respeite o tamanho do perfil */
+    .profile img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+        margin-top: 2rem;
+    }
+
+    .profile figcaption {
+        font-size: 0.9rem;
+    }
+
+    .manage-profiles {
+        margin-bottom: 2rem;
+    }
+}
